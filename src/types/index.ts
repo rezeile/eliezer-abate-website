@@ -4,8 +4,10 @@ export interface Post {
   slug: string;
   title: string;
   date: string;
-  content: string;
+  coverImage?: string;
   excerpt: string;
+  tags: string[];
+  content: string;
   [key: string]: unknown;
 }
 
