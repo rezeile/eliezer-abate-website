@@ -10,7 +10,7 @@ interface BlogProps {
   posts: Post[];
 }
 
-const FILTERS = ['All', 'Ethiopia', 'Interviews', 'Translations', 'Engineering Notes', 'Personal'] as const;
+const FILTERS = ['All', 'Ethiopia', 'Interviews', 'Algorithms', 'Reflections', 'Curations'] as const;
 type Filter = typeof FILTERS[number];
 
 const FEATURED_SLUGS = [
@@ -22,20 +22,20 @@ const FEATURED_SLUGS = [
 
 // Map posts to categories based on slug
 const getCategory = (slug: string): Filter => {
-  if (['the-untold-story-of-a-tplf-hostage-crisis', 'a-secret-israeli-operation-out-of-tigray', 'whats-happening-in-tigray', 'the-character-assassination-of-ethiopia', 'ethiopia-egypt-and-the-abay-river'].includes(slug)) {
+  if (['the-untold-story-of-a-tplf-hostage-crisis', 'a-secret-israeli-operation-out-of-tigray', 'whats-happening-in-tigray', 'the-character-assassination-of-ethiopia', 'ethiopia-egypt-and-the-abay-river', 'abiy-ahmed-parliament-speech'].includes(slug)) {
     return 'Ethiopia';
   }
   if (['gerd-q-a-with-dr-tirusew-asefa'].includes(slug)) {
     return 'Interviews';
   }
-  if (['abiy-ahmed-parliament-speech'].includes(slug)) {
-    return 'Translations';
-  }
   if (['binary-search', 'dfs-bfs', 'sliding-window', 'two-pointers', 'arrays', 'sorting', 'topological-sort', 'union-find', 'bit-manipulation', 'math', 'design-x', 'system-design-blogs'].includes(slug)) {
-    return 'Engineering Notes';
+    return 'Algorithms';
   }
   if (['thank-you-kobe', 'things-to-consider-before-going-all-in-on-your-first-startup', 'book-review-skunkworks'].includes(slug)) {
-    return 'Personal';
+    return 'Reflections';
+  }
+  if (['the-collected-threads-of-addis-qnie', 'the-ethiopia-primer'].includes(slug)) {
+    return 'Curations';
   }
   return 'All';
 };
@@ -71,35 +71,6 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
                   </Link>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Curations */}
-        <section className="mb-10">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Curations</h2>
-          <div className="space-y-3">
-            <div>
-              <a
-                href="https://twitter.com/i/events/1329890313847357443"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-900 hover:text-blue-700 transition-colors"
-              >
-                Collected Threads of Addis
-              </a>
-              <p className="text-gray-500 text-sm">Twitter threads on Ethiopian history and politics.</p>
-            </div>
-            <div>
-              <a
-                href="https://twitter.com/i/events/1329890313847357443"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-900 hover:text-blue-700 transition-colors"
-              >
-                Articles on the Tigray Conflict
-              </a>
-              <p className="text-gray-500 text-sm">Curated reading list on the 2020–2022 conflict.</p>
             </div>
           </div>
         </section>
