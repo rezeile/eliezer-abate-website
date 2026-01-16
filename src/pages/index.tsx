@@ -90,7 +90,7 @@ export default function Home() {
             {/* The Abiy Years */}
             <div className="py-4 first:pt-0">
               <h3 className="text-base font-semibold text-gray-900 mb-1">The Abiy Years</h3>
-              <p className="text-gray-600 text-sm mb-2">An interactive timeline of Ethiopia's political rupture (2015–2026).</p>
+              <p className="text-gray-600 text-sm mb-2">An interactive timeline of Ethiopia&apos;s political rupture (2015–2026).</p>
               <a href="https://graspwell.com/the-abiy-years/" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 transition-colors text-sm">Explore →</a>
             </div>
 

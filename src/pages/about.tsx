@@ -26,7 +26,7 @@ const About: React.FC = () => {
             I research and visualize the political economy of the Horn of Africa—how states form, borders shift, and power flows.
           </p>
           <p>
-            I'm the founder of <a href="https://graspwell.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 transition-colors">GraspWell</a>, where I build interactive maps and visual essays to bring clarity to a complex region.
+            I&apos;m the founder of <a href="https://graspwell.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 transition-colors">GraspWell</a>, where I build interactive maps and visual essays to bring clarity to a complex region.
           </p>
           <p>
             Before this, I worked as a software engineer building data infrastructure and web applications. I studied Computer Science and have spent years combining engineering with long-form research.

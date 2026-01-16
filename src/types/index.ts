@@ -6,8 +6,8 @@ export interface Post {
   date: string;
   coverImage?: string;
   excerpt: string;
-  category: string;
-  tags: string[];
+  category?: string;
+  tags?: string[];
   content: string;
   [key: string]: unknown;
 }
