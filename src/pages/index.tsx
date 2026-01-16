@@ -68,7 +68,7 @@ export default function Home() {
           <h1 className="text-4xl font-serif text-gray-900 mb-1">Eliezer Abate</h1>
           <p className="text-gray-600 mb-6">Engineer. Writer. Builder.</p>
           <p className="text-gray-800 leading-relaxed mb-4">
-            I build maps and visual essays on Ethiopia's modern state—how borders shift, power concentrates, and crises unfold to make Ethiopia's recent history legible.
+            I make software, essays, and videos that help me make sense of Ethiopia.
           </p>
           <div>
             <a
