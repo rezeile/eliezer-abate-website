@@ -1,0 +1,86 @@
+---
+title: 'Union Find'
+date: '2021-05-12'
+excerpt: 'The Union-Find data structure for disjoint set problems.'
+---
+
+![](/images/blog/union-find-609c219e25d3736b060925f1_Scree-5ea35024.png)
+
+#### Introduction
+
+Imagine you’re back in elementary school and its recess and you and your
+friends have chosen captains to form teams. No single player can belong
+to more than one team and at some point after you have played some games
+some players can switch teams. What if someone came while you guys are
+on break and wanted to know to which team a player belonged to?  
+  
+The Union Find data structure was invented by Bernard Galler and Michael
+Fischer to efficiently determine which non-overlapping group and item
+belongs to (for ex. which team a player belongs to) and to quickly join
+two items into a single group (i.e. the captain selects you into his
+team). It has the following two operations:
+
+  
+
+- join(item A, item B) -\> joins two items together
+- find(item) -\> group it belongs to
+
+#### How It Works
+
+Like many other data structures, the union find data structure is
+modeled as a tree, but like the common heap implementation the tree
+operations are performed on an array. The key to the union find data
+structure is assigning a representative value as an id to each disjoint
+(non-overlapping) group.   
+
+We allocate an array to store the representative id of the *immediate*
+parent of each of our N items. Initially each item belongs to its own
+group the parent\[i\] = i. We will also allocate an array to store the
+*rank* (which is the height of a tree beginning at the node itself) for
+each item.
+
+  
+Then if we want to join two items into the same group, we first have to
+check to see if they’re already in the same group. If they are not, then
+we will assign the *root* of the item with the smaller rank to be a
+direct child of the root of the item with the larger rank so as not to
+increase the maximum rank between the two items. If the two items have
+exactly the same rank, we can arbitrarily choose one item and assign it
+as the parent of the other.  
+  
+For the find operation we will walk back parents until we land on the
+root node. And as we walk back we can reduce the distance for our next
+search by assigning to each descendent of the root node, the root node
+as its parent, so next time we call find we can immediately find it.
+This is called *path compression*. The implementation of the data
+structure follows below: 
+
+The key thing to observe is that in the recursive *find* function above
+we'll continue to call find on the parent until the parent becomes
+itself while setting the parent of any descendants of the root to the
+root. The path compression allows us to achieve a worst case
+O(LogN) time for the find and join operations (In fact they are slightly
+faster than O(LogN). You can read more
+[here](https://www.semanticscholar.org/paper/Efficiency-of-a-Good-But-Not-Linear-Set-Union-Tarjan/449230e4ebcf6ba071636e07cdca76ef85213a43)).
+This is how we compress the path. It's usually the case that if a
+problem can be solved using the Union Find data structure, then it can
+alternatively be solved using BFS or DFS as well. It's good to practice
+all three approaches.
+
+#### Practice Problems
+
+**MEDIUM**
+
+○ [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+
+○ [Number of
+Provinces](https://leetcode.com/problems/number-of-provinces/)
+
+○ [Accounts Merge](https://leetcode.com/problems/accounts-merge/)
+
+○ [Evaluate Division](https://leetcode.com/problems/evaluate-division/)
+
+**HARD**
+
+○ [Longest Consecutive
+Sequence](https://leetcode.com/problems/longest-consecutive-sequence)

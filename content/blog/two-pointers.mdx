@@ -1,0 +1,99 @@
+---
+title: 'Two Pointers'
+date: '2021-06-03'
+excerpt: 'The two-pointer technique for array and string problems.'
+---
+
+#### Introduction
+
+Two pointer problems require you to use two (or more) pointers whose
+values shift one at a time. These problems are similar to sliding window
+problems but unlike sliding window problems which usually have a fixed
+window size that moves from right to left or left to right, two pointer
+problems don't usually keep a fixed window. Two pointers problems can be
+some of the trickest problems to intuit so it's important to put in the
+reps and do as many problems as possible.
+
+#### A Couple Examples
+
+*Problem*
+
+Given two sorted integer arrays *nums1* and *nums2*, merge *nums2* into
+*nums1* as one sorted array.
+
+The number of elements initialized in *nums1* and *nums2* are m and n
+respectively. You may assume that *nums1* has a size equal to m + n such
+that it has enough space to hold additional elements from *nums2*.
+
+*Algorithm*
+
+The main trick required to solve this problem is to recognize that we
+need to solve it from right to left so that we don't overwrite the
+values in *nums1.* If we have one pointer at m-1 and another at n-1, and
+a final pointer at m+n-1 and work from right to left comparing values
+one at a time and placing the larger value at the right, then once both
+the right and left pointer reach 0 we know we will have processed all
+elements and the array will be in sorted order.
+
+
+
+![](/images/blog/two-pointers-609ed69028c08210061c7511_Scree-5ed43bab.png)
+
+*Example of three pointers.*
+
+*Problem*
+
+Given an integer array nums sorted in **non-decreasing** order, return
+*an array of* ***the squares of each number*** *sorted in non-decreasing
+order*.
+
+*Algorithm*
+
+This problem would require an *unchanged* array if the numbers are all
+positive. The only hiccup comes from the fact that the smallest value in
+the original array could have the largest square in the new array. For
+example if we had \[-4,2,1\] the square of these values would be
+\[1,4,16\]. So we use two pointers one on the far left and one on the
+right hand and compare the squares of each one by one and place the
+largest value on the far right in a new array.
+
+
+
+![](/images/blog/two-pointers-609ef115b8c5224ee8b57b6b_Scree-cb722d50.png)
+
+*Two pointers.*
+
+#### Practice Problems
+
+**EASY**
+
+○ [Merge Sorted
+Array](https://leetcode.com/problems/merge-sorted-array/)
+
+○ [Squares of a Sorted
+Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+
+○ [Backspace String
+Compare](https://leetcode.com/problems/backspace-string-compare/)
+
+**MEDIUM**
+
+○ [Longest Substring Without Repeating
+Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
+
+○ [Container With Most
+Water](https://leetcode.com/problems/container-with-most-water)
+
+○ [Partition Labels](https://leetcode.com/problems/partition-labels)
+
+○ [Longest Repeating Character
+Replacement](https://leetcode.com/problems/longest-repeating-character-replacement)
+
+○ [Sort Colors](https://leetcode.com/problems/sort-colors)
+
+○ [Three Sum Closest](https://leetcode.com/problems/3sum-closest/)
+
+**HARD**
+
+○ [Trapping Rain
+Water](https://leetcode.com/problems/trapping-rain-water/)

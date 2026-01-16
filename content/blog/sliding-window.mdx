@@ -1,0 +1,95 @@
+---
+title: 'Sliding Window'
+date: '2021-06-03'
+excerpt: 'The sliding window pattern for array and string problems.'
+---
+
+![](/images/blog/sliding-window-60a1acf057a0d42067b63c82_Scree-86b7b504.png)
+*Longest Continuous Subarray with Absolute Diff Less Than or Equal to Limit*
+
+#### Introduction
+
+Sliding window problems require you to keep a fixed size window that
+satisfies a certain criteria and shift or slide the window as soon as a
+violation is encountered.
+
+#### A Few Examples
+
+*Problem*
+
+Given an array of integers *A* and an integer *limit*, return the size
+of the longest **non-empty** subarray such that the absolute difference
+between any two elements of this subarray is less than or equal to
+*limit.*
+
+*Algorithm*
+
+The key idea is to maintain an ordered
+[multiset](http://www.cplusplus.com/reference/set/multiset/) of elements
+and compare the max and the min values to see if they exceed limit. Each
+time we encounter a violation we will decrease the window size by one
+beginning from the left hand side. The gap of the largest possible
+subarray we have seen will remain and at the end the array size - our
+ending left pointer (i) will give us the answer.
+
+Longest Continuous Subarray with Absolute Diff Less Than or
+Equal to Limit
+
+*Problem*
+
+Given an array of integers nums and an integer k. A continuous subarray
+is called **nice** if there are k odd numbers on it. Return *the number
+of* ***nice*** *sub-arrays*.
+
+*Algorithm*
+
+There are several problems that will ask you to find the number of
+continuous subarrays containing k properties (odd \#s in this example).
+The key insight to remember here is that to arrive at *exactly* k items
+which satisfy a certain property, we just have to count the total length
+of continuous subarrays which satisfy *atmost* k elements and those that
+satisfy at most k-1 elements and take the difference between two. Where
+the at most k-1 and the at most k differ means we have exclusive
+subarrays that only work for the *exactly k case.* Solution follows
+below:
+
+
+
+![](/images/blog/sliding-window-60a2ba52eaf39962458b7074_Scree-b81a0896.png)
+
+*exactly(k) = atmost(k) - atmost(k-1)*
+
+#### Practice Problems
+
+**MEDIUM**
+
+[Minimum size subarray
+sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
+
+[Binary Subarrays with
+Sum](https://leetcode.com/problems/binary-subarrays-with-sum/)
+
+[Max Consecutive Ones
+III](https://leetcode.com/problems/max-consecutive-ones-iii/)
+
+[Count Number of Nice
+Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays/)
+
+[Number of Substrings Containing All Three
+Characters](https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/)
+
+[Replace the Substring for Balanced
+String](https://leetcode.com/problems/replace-the-substring-for-balanced-string/)
+
+[Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+
+**HARD**
+
+[Shortest Subarray with Sum at least
+K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)
+
+[Subarrays with K Different
+Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
+
+[Constrained Subsequence
+Sum](https://leetcode.com/problems/constrained-subsequence-sum/)

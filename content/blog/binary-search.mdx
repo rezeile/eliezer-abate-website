@@ -1,0 +1,129 @@
+---
+title: 'Binary Search'
+date: '2021-06-03'
+excerpt: 'Patterns and techniques for solving binary search problems.'
+---
+
+![](/images/blog/binary-search-609c9e97e0ccb1d020cc91db_Scree-57f0d5dc.png)
+*Loop condition to check first value larger than the target.*
+
+
+
+![](/images/blog/binary-search-609c7695f9519a29155c65c3_Scree-fa15ca61.png)
+*Binary Search (first infindPivotthen insearch)*
+
+#### Introduction
+
+Suppose a group of 100 people are in a line and they are standing from
+shortest to tallest where the shortest person is on the left side and
+the tallest person is on the right side. You want to join the line but
+to do so you must honor the rules of the line and find a position where
+the person to your left is shorter than you and the person to your right
+is taller than you and insert yourself the middle. Of course if you are
+the shortest you can simply go to the far left and if you are the
+tallest to the right without having to do much work. But like most
+people, if you are somewhere in between, you need to do some
+searching.  
+
+One approach to find where you belong is to begin from the shortest
+person and one by one move to the right until the right conditions are
+satisfied. Although this approach works it is not the most efficient. A
+better approach would be to find the person at the middle of the line
+and compare your height to that person. If you are taller than that
+person you know that you can eliminate searching through all people to
+the left. Similarly if you are shorter than the middle person you can
+eliminate searching through the taller half of the line on the right
+side.  
+  
+The binary search algorithm works exactly this way. Binary search is
+used to find an element in a sorted array and to do so the algorithm
+first finds the middle element and based on the result it eliminates one
+half of the array which is irrelevant to it. It continues this process
+until the element is found or it determines the element does not
+exist.   
+
+#### An Example
+
+*Problem Description*
+
+An integer array *nums* is sorted in ascending order and contains
+**distinct** values. We rotate the array **k** positions to the right.
+Your task is to determine if a value **target** belongs to the array and
+return the index at which it's located. If target is not in the array,
+we should return -1. For example if we had an initial array
+\[1,2,3,4,5\] if we rotate it by k=2, it becomes \[4,5,1,2,3\] and
+target = 1. In this case target is located at index 3.  
+  
+The key insight to to solving this problem is to find the pivot element
+first in O(logN) time doing a binary search. The pivot element is the
+single element which is greater than the element to its right. If the
+array is not rotated at all the pivot element is the last element. Then
+after finding the pivot element we need to determine whether the target
+value falls to the left or to the right of the array and perform binary
+search to find it.  
+  
+The code follows below:
+
+Binary Search (first in findPivot then in
+search)
+
+Observe in the above example we had *L
+
+Loop condition to check first value larger than the
+target.
+
+#### Practice Problems
+
+**EASY**
+
+○ [Kth Missing Positive
+Number](https://leetcode.com/problems/kth-missing-positive-number/)
+
+**MEDIUM**
+
+○ [Capacity to Ship Packages in N
+Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
+
+○ [Koko Eating
+Bananas](https://leetcode.com/problems/koko-eating-bananas/)
+
+○ [Find the Smallest Divisor Given
+Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/)  
+○ [Search in Rotated Sorted
+Array](https://leetcode.com/problems/search-in-rotated-sorted-array)
+
+○ [Minimum Number of Days to Make m
+Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
+
+○ [Longest Increasing
+Subsequence](https://leetcode.com/problems/longest-increasing-subsequence)
+
+○ [Divide Two
+Integers](https://leetcode.com/problems/divide-two-integers)
+
+○ [Find K Closest
+Elements](https://leetcode.com/problems/find-k-closest-elements)
+
+○ [4Sum II](https://leetcode.com/problems/4sum-ii)
+
+○ [Kth Smallest Element in
+BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst)
+
+**HARD**
+
+○ [Median of Two Sorted
+Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays)
+
+○ [Maximum Profit in Job
+Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling)
+
+○ [Count of Smaller Number After
+Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self)
+
+○ [Divide Chocolate](https://leetcode.com/problems/divide-chocolate/)
+
+○ [Minimize Max Distance to Gas
+Station](https://leetcode.com/problems/minimize-max-distance-to-gas-station/)
+
+○ [Split Array Largest
+Sum](https://leetcode.com/problems/split-array-largest-sum/)

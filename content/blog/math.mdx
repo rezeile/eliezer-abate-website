@@ -1,0 +1,53 @@
+---
+title: 'Math'
+date: '2021-06-03'
+excerpt: 'Mathematical techniques and number theory for algorithm problems.'
+---
+
+#### Introduction
+
+There are a lot of interesting basic math questions that make for good
+algorithm questions. Most of these questions don't require any
+specialized knowledge except for elementary school level math, but they
+will require careful thinking to answer correctly.
+
+#### An Example
+
+Count the number of primes less than a non-negative number n. The naive
+way to solve this problem would be to check each number and test whether
+it is divisible by any other number other than 1. But there is a better
+algorithm called the sieve of Eratosthenes named after Eratosthenes of
+Alexandria. The idea is to initially declare an array of booleans called
+primes and set every value between 0 - n to true as 'probably prime'.
+Then we set 1 and 0 to false. Then we consider all factors of the number
+less than its square root. Then beginning with 2 (which is set to true
+as a prime) we cross out all multiples of two as non-prime. We do this
+with 3 and all numbers until we hit out end condition,
+
+
+
+![](/images/blog/math-609ddb3d4b9317ff784d32cd_Scree-e498fa2c.png)
+
+*Sieve of Eratosthenes*
+
+#### Practice Problems
+
+**EASY**
+
+○ [Reverse Integer](https://leetcode.com/problems/reverse-integer/)
+
+○ [Count Primes](https://leetcode.com/problems/count-primes)
+
+**MEDIUM**
+
+○ [Add Two Numbers](https://leetcode.com/problems/add-two-numbers)
+
+○ [Divide Two
+Integers](https://leetcode.com/problems/divide-two-integers)
+
+○ [Fraction to Recurring
+Decimal](https://leetcode.com/problems/fraction-to-recurring-decimal)
+
+**HARD**
+
+○ [Basic Calculator](https://leetcode.com/problems/basic-calculator)

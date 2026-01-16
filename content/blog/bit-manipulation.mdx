@@ -1,0 +1,104 @@
+---
+title: 'Bit Manipulation'
+date: '2021-06-03'
+excerpt: 'Essential bit manipulation techniques for coding interviews.'
+---
+
+![](/images/blog/bit-manipulation-60986f09088fb25e9d689cc9_Scree-96dc9156.png)
+
+#### Introduction
+
+Technical interviews at large tech companies such as Facebook, Google,
+Netflix etc … will test your understanding of fundamental Computer
+Science techniques.   
+
+Bit manipulation questions come up frequently and are intended to test
+one’s fluency with working with unary bit operators such as: ^ (xor), \|
+(or), & (and), \\> (right shift), ~ (not).  
+  
+For example to check if the *3rd* bit of the integer 7 is set (7 is
+represented as 0111 in binary), all we have to do is the
+following: (0111) & (1 \ 3 neighbors dies
+- A dead cell with 3 live neighbors becomes alive  
+
+This question asks us to compute the next state of the matrix *without*
+utilizing another matrix. 
+
+
+
+![](/images/blog/bit-manipulation-60986e4b49833285ad021878_game--804d6480.jpg)
+
+*Applying above rules to 4 x 3 matrix*
+
+  
+The key insight to solve this problem is to realize that each cell
+utilizes exactly a single bit to store information even though each cell
+is made up of 32-bit integers. Thus we can solve this problem by storing
+the next state in the second least significant bit position and when we
+are done processing every cell we can shift the value in the second bit
+back to the least significant bit and return the answer in the original
+matrix we were given. The solution follows below.
+
+Observe that in line 19 *n* the number of neighbors and we perform a
+bitwise OR (\|) with the value. If we have a live cell denoted by the
+integer 1, 01 then the bitwise or of n=2, 10 or n=3 11 and 1 will always
+be three and we set the second bit by adding 2. For a dead cell, 00, we
+set the second bit only if the count is n=3, 11 which will result in a
+value of three when we do 00 \| 11.  
+  
+Finally we move the second bit values to the first bit and place the
+matrix in its final position.
+
+#### Some Bit Tricks
+
+Set ith bit: num \|= num & (1 \<\< i)
+
+Clear ith bit: num &= ~(1 \<\< i)
+
+Clear least significant set bit: num &= num-1
+
+#### Practice Problems
+
+**EASY**
+
+○ [Hamming Distance](https://leetcode.com/problems/hamming-distance/)
+
+○ [Single Number](https://leetcode.com/problems/single-number)
+
+○ [Missing Number](https://leetcode.com/problems/missing-number/)
+
+○ [Majority Element](https://leetcode.com/problems/majority-element)
+(hint: try bit by bit construction)
+
+○ [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
+
+**MEDIUM**
+
+○ [Game of Life](https://leetcode.com/problems/game-of-life) (hint: see
+example above)
+
+○ [Maximum XOR of Two Numbers in an
+Array](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array)
+(hint: try bit by bit construction)
+
+○ [Counting Bits](https://leetcode.com/problems/counting-bits)
+
+○ [Single Number II](https://leetcode.com/problems/single-number-ii)
+
+○ [Subsets](https://leetcode.com/problems/subsets)
+
+○ [Repeated
+DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/)
+
+○ [Single Number III](https://leetcode.com/problems/single-number-iii/)
+
+○ [Sum of Two
+Integers](https://leetcode.com/problems/sum-of-two-integers/)
+
+**HARD**
+
+○ [Minimum One Bit Operations to Make Integers
+Zero](https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero)
+
+To learn more about Bit Manipulation refer to the following [excellent
+post](https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary%3A-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently).

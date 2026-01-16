@@ -1,0 +1,97 @@
+---
+title: 'DFS & BFS'
+date: '2021-06-03'
+excerpt: 'Depth-first and breadth-first search patterns for graph problems.'
+---
+
+![](/images/blog/dfs-bfs-60a68bbe6631805ee5c78743_Scree-536c8658.png)
+*BFSÂ solution*
+
+#### Introduction
+
+Depth First Search and Breath First Search are extremely common graph
+traversal algorithms. The main difference is that in BFS visits nodes of
+the same level one at the same time, whereas DFS follows a node through
+the rabbit hole until the node no longer has any neighbors to visit.
+You'll typically perform DFS or BFS when the problem statement has a
+2D matrix that requires non-obvious navigation, or a binary tree. There
+are also other deceptive inputs that initially seem like they require
+simple array processing or two-pointer processing but can only be
+answered via DFS/BFS. The example that follows will illustrate this.
+
+#### An Example
+
+*Problem Statement*
+
+Given a string s that contains parentheses and letters, remove the
+minimum number of invalid parentheses to make the input string valid.
+
+Return *all the possible results*. You may return the answer in **any
+order**.
+
+*BFS Algorithm*
+
+The key to this problem is to realize that we will need to remove a
+single open or close parentheses from *every possible position* and
+check to see if the newly formed string is a valid parentheses. If we go
+about removing 1 parentheses the first time from all possible positions,
+then another (which makes a total of two), then another on the third
+round, we can treat this like a BFS problem.
+
+The code follows below:
+
+BFS solution
+
+The problem can also be solved via DFS. They key thing to remember is
+that we need to remove the minimum amount of characters until we
+encounter a valid parentheses. So we need to keep the track of the
+running minimum value so that our other depth first traversals don't go
+to deeper levels than the minimum we have encountered. The solution
+follows below:
+
+
+
+![](/images/blog/dfs-bfs-60a68d54375aadeea6662dfc_Scree-73cb7e1a.png)
+
+*DFS Solution*
+
+#### Practice Problems
+
+**MEDIUM**
+
+○ [Number of Islands](https://leetcode.com/problems/number-of-islands)
+
+○ [Letter Combinations of a Phone
+Number](https://leetcode.com/problems/course-schedule-ii)
+
+○ [Course Schedule II](https://leetcode.com/problems/course-schedule-ii)
+
+○ [Course Schedule](https://leetcode.com/problems/course-schedule)
+
+○ [Pacific Atlantic Water
+Flow](https://leetcode.com/problems/pacific-atlantic-water-flow)
+
+○ [Minesweeper](https://leetcode.com/problems/minesweeper)
+
+○ [Populating Next Right Pointers in Each Node
+II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii)
+
+○ [Construct Binary Tree from Inorder and Postorder
+Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal)
+
+**HARD**
+
+○ [Longest Increasing Path in a
+Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
+
+○ [Binary Tree Maximum Path
+Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum)
+
+○ [Remove Invalid
+Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)
+
+○ [Concatenated
+Words](https://leetcode.com/problems/concatenated-words/)
+
+○ [Recover Binary Search
+Tree](https://leetcode.com/problems/recover-binary-search-tree/)

@@ -62,6 +62,32 @@ const config = {
               fontWeight: '300',
               color: theme('colors.gray.600'),
             },
+            table: {
+              width: '100%',
+              borderCollapse: 'collapse',
+              marginTop: '1.5rem',
+              marginBottom: '1.5rem',
+              border: `1px solid ${theme('colors.gray.300')}`,
+            },
+            'thead th': {
+              fontWeight: '600',
+              padding: '0.75rem 1rem 0.75rem 1.25rem',
+              textAlign: 'left',
+              border: `1px solid ${theme('colors.gray.300')}`,
+            },
+            'thead th:last-child': {
+              width: '140px',
+              whiteSpace: 'nowrap',
+            },
+            'tbody td': {
+              padding: '0.75rem 1rem 0.75rem 1.25rem',
+              border: `1px solid ${theme('colors.gray.300')}`,
+              verticalAlign: 'top',
+            },
+            'tbody td:last-child': {
+              width: '140px',
+              whiteSpace: 'nowrap',
+            },
           },
         },
       }),

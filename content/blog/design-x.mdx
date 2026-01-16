@@ -1,0 +1,68 @@
+---
+title: 'Design X'
+date: '2021-06-03'
+excerpt: 'Common object-oriented design problems and their solutions.'
+---
+
+#### Introduction
+
+There are a class of problems in technical interviews that will ask you
+to design a typically known game or data structure using object oriented
+principles. You may be asked to design a data structure like a Hash Map
+or an LRU cache or simulate a game like Tic Tac Toe or a system like a
+Browser's history functionality.
+
+#### An Example
+
+Design Tic Tac Toe. You have to implement a class named *TicTacToe*
+which will take an integer n representing an nxn grid and you need to
+implement a method called *move* that will take a row, column and player
+that will place an item. The player id is either 1 or 2 and the move
+method will return the winner everytime it's called. If there is no
+winner it returns 0 otherwise it will return either player 1 or 2.
+
+The key insight to realize for this problem is that a tic tac toe game
+can only be won if a player places an item entirely in a row, column or
+one of the two diagonals. So we only need to keep track of the number of
+placements by each player for each row, column, diagonal, and
+*antidiagonal.* One clever way to do this is to keep for arrays of size
+N and if player 1 places an item add 1 to the respective
+row,column,diagonal, or antidiagonal or if player 2 places an item add
+-1. If at anypoint any of these four arrays contains total value of size
+N for a row,column, diagonal or antidiagonal, then the player that just
+placed the item is the winner. The code follows below: 
+
+
+
+![](/images/blog/design-x-609dadfaae19b93085715ce7_Scree-91c095c9.png)
+
+*TitTacToe solution*
+
+#### Practice Problems
+
+**EASY**
+
+○ [Design HashMap](https://leetcode.com/problems/design-hashmap)
+
+**MEDIUM**
+
+○ [Design an Underground
+System](https://leetcode.com/problems/design-underground-system)
+
+○ [Design Hit Counter](https://leetcode.com/problems/design-hit-counter)
+
+○ [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe)
+
+○ [Design Browser
+History](https://leetcode.com/problems/design-browser-history)
+
+○ [Design a
+Leaderboard](https://leetcode.com/problems/design-a-leaderboard)****
+
+**HARD**
+
+○ [Design In-Memory File
+System](https://leetcode.com/problems/design-in-memory-file-system)
+
+○ [Design Excel Sum
+Formula](https://leetcode.com/problems/design-excel-sum-formula)

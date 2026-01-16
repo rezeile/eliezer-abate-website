@@ -1,0 +1,97 @@
+---
+title: 'Sorting'
+date: '2021-06-03'
+excerpt: 'Sorting algorithms and their applications in coding interviews.'
+---
+
+#### Introduction
+
+In typical interviews you will rarely encounter problems that will
+directly ask you to sort an array of integers. You might, however,
+encounter a question that asks you to sort a linked list. Thus it’s
+important to become familiar with the techniques used in common sorting
+algorithms.  
+  
+Usually sorting creeps its head in when it is *an intermediate* step in
+a multi-step process to solve a problem. At other times the problem
+statement will make clear that you are dealing with a sorted array and
+you should use that information to help you arrive at an optimal
+solution. If the input array you are dealing with is already sorted then
+that’s a big hint you should probably consider binary search before
+considering a less optimal linear time solution.   
+  
+
+#### O(N) algorithms 
+
+*Counting Sort*
+
+Counting sort works by counting the frequency of each unique item and
+then outputting the items in order. If an item occurs k times , we'll
+place it k consecutive times. We will assume that we know the ordering
+of the unique items. For example if we have items 0 - 6, we know 0 
+
+
+
+![](/images/blog/sorting-609adee6386d8046fd5ab293_Scree-bad9e051.png)
+
+*Insertion Sort.*
+
+*
+
+![](/images/blog/sorting-609af1195fa3314d173a4ee6_Scree-c18a02ed.png)
+
+*Selection Sort**
+
+Selection sort also uses the same principle as insertion sort and keeps
+a partially sorted array to the left of the item currently being
+processed. While in insertion sort we continually modify the partially
+sorted array by inserting a new element somewhere in between its
+smallest and largest value, in selection sort the partially sorted items
+are in their final position.
+
+We front load the work and each time try to find the smallest value to
+the right and adding it as the next item in the partially sorted array
+to our left. This contrasts with insertion sort where we never examine
+the items to the right of the value we are processing.
+
+Selection Sort
+
+*
+
+![](/images/blog/sorting-609af6573b6872bdb4c39fe6_Scree-f315d57e.png)
+
+*Bubble Sort**
+
+Bubble sort will keep a partially sorted array on the far right hand
+side. Assuming we want to sort in ascending order we will continually
+bubbling the largest items to the right by finding the largest item seen
+so far and move it to the right, then the second largest item and so
+forth. Once we have processed all elements our final array will be
+sorted. For bubble sort the partial sort is on the right hand side and
+thus its different from selection sort and insertion sort in this
+manner. It is similar to the selection sort though in that the partially
+sorted items in the right are in their final position.
+
+Bubble Sort
+
+  
+
+#### O(NLogN) Algorithms
+
+Merge Sort (Todo)
+
+Quick Sort (Todo)
+
+Heap Sort (Todo)
+
+#### Other Notes
+
+A sorting algorithm is **stable** if two elements in the input array
+with identical keys appear in the same order when the sorted output is
+processed. Heapsort and Quicksort algorithms are unstable, whereas merge
+sort and insertion sort are. The key takeaway is stability only matters
+when the input array contains duplicate values.
+
+Check out the following tool to see a
+[visualization](https://visualgo.net/en/sorting) your favorite sorting
+algorithms.
